@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool FacingLeft { get {  return facingLeft; }  set { facingLeft = value; } }
+    public bool FacingLeft { get { return facingLeft; } }
     public static PlayerController Instance;
 
     [SerializeField] private float moveSpeed = 1f;  // Tốc độ di chuyển của nhân vật, có thể chỉnh sửa từ Inspector.
+    [SerializeField] private float dashSpeed = 4f;
+    [SerializeField] private TrailRenderer myTrailRenderer;
 
     private PlayerControls playerControls;  // Đối tượng để xử lý input từ người chơi.
     private Vector2 movement;  // Lưu trữ hướng di chuyển.
     private Rigidbody2D rb;  // Thành phần Rigidbody2D để xử lý vật lý.
     private Animator myAnimator;  // Thành phần Animator để quản lý hoạt ảnh.
     private SpriteRenderer mySpriteRender;  // Thành phần SpriteRenderer để thay đổi hướng nhân vật.
+    private float startingMoveSpeed;
 
     private bool facingLeft = false;
+    private bool isDashing = false;
 
     private void Awake()
     {
@@ -33,6 +37,12 @@ public class PlayerController : MonoBehaviour
         mySpriteRender = GetComponent<SpriteRenderer>();
     }
 
+    private void Start()
+    {
+        playerControls.Combat.Dash.performed += _ => Dash();
+
+        startingMoveSpeed = moveSpeed;
+    }
     private void OnEnable()
     {
         // Kích hoạt hệ thống điều khiển của người chơi.
@@ -82,12 +92,34 @@ public class PlayerController : MonoBehaviour
         if (mousePos.x < playerScreenPoint.x)
         {
             mySpriteRender.flipX = true;
-            FacingLeft = true;
+            facingLeft = true;
         }
         else
         {
             mySpriteRender.flipX = false;
-            FacingLeft = false;
+            facingLeft = false;
         }
+    }
+
+    private void Dash()
+    {
+        if (!isDashing)
+        {
+            isDashing = true;
+            moveSpeed *= dashSpeed;
+            myTrailRenderer.emitting = true;
+            StartCoroutine(EndDashRoutine());
+        }
+    }
+
+    private IEnumerator EndDashRoutine()
+    {
+        float dashTime = 0.2f;
+        float dashCD = 0.25f;
+        yield return new WaitForSeconds(dashTime);
+        moveSpeed = startingMoveSpeed;
+        myTrailRenderer.emitting = false;
+        yield return new WaitForSeconds(dashCD);
+        isDashing = false;
     }
 }
