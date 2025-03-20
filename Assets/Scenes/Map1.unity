@@ -24655,7 +24655,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec4905b71789774093251768f53bdfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
 --- !u!1 &1615508660
 GameObject:
   m_ObjectHideFlags: 0
@@ -24709,7 +24708,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 8615259ec7607384ca42446430c6d37b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
