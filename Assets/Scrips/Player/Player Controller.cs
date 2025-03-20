@@ -9,6 +9,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float moveSpeed = 1f;  // Tốc độ di chuyển của nhân vật, có thể chỉnh sửa từ Inspector.
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private TrailRenderer myTrailRenderer;
+    [SerializeField] private Transform weaponCollider;
 
     private PlayerControls playerControls;  // Đối tượng để xử lý input từ người chơi.
     private Vector2 movement;  // Lưu trữ hướng di chuyển.
@@ -62,6 +63,10 @@ public class PlayerController : Singleton<PlayerController>
 
         // Di chuyển nhân vật.
         Move();
+    }
+    public Transform GetWeaponCollider()
+    {
+        return weaponCollider;
     }
 
     private void PlayerInput()
