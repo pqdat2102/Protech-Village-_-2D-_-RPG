@@ -38,12 +38,14 @@ public class PlayerHealth : MonoBehaviour
     {
         if(!canTakeDamage) {return; }
 
+        ScreenShake.Instance.ShakeScreen();
         knockBack.GetKnockBack(hitTransform, knockBackThrustAmount);
         StartCoroutine(flash.FlashRoutine());
 
         canTakeDamage = false;
         currentHealth -= damageAmount;
         StartCoroutine(DamageRecoveryRoutine());
+
     }
 
     private IEnumerator DamageRecoveryRoutine()

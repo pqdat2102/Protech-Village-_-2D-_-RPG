@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6324187346097812418}
   - component: {fileID: 7920654131229132651}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Bullet Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5159239368413687589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.1, y: 3.17, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -164,4 +164,4 @@ MonoBehaviour:
   moveSpeed: 8
   particleOnHitPrefabVFX: {fileID: 7419972325616074953, guid: 8aeec81714131894aa3cbbaef51595d4, type: 3}
   isEnemyProjectile: 1
-  projectileRange: 20
+  projectileRange: 8

@@ -25,7 +25,11 @@ public class Projectile : MonoBehaviour
     public void UpdateProjectileRange(float projectileRange)
     {
         this.projectileRange = projectileRange;
+    }
 
+    public void UpdateMoveSpeed(float moveSpeed)
+    {
+        this.moveSpeed = moveSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -62,6 +66,8 @@ public class Projectile : MonoBehaviour
     {
         transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
     }
+
+    
 }
 
 

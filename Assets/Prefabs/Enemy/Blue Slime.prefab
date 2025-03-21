@@ -17,7 +17,9 @@ GameObject:
   - component: {fileID: 9222046948719184613}
   - component: {fileID: 1324183722007661521}
   - component: {fileID: -3570473180302020595}
+  - component: {fileID: -5563339414101612004}
   - component: {fileID: 1134994822330053083}
+  - component: {fileID: 7025298623215325742}
   m_Layer: 0
   m_Name: Blue Slime
   m_TagString: Untagged
@@ -167,6 +169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 2
+  attackRange: 5
+  enemyType: {fileID: -5563339414101612004}
+  attackCooldown: 2
+  stopMovingWhileAttacking: 0
 --- !u!114 &6650388999529412851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +228,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteFlashMat: {fileID: 2100000, guid: a466475c325ff044da6e518966d61585, type: 2}
   restoreDefaultMatTime: 0.2
+--- !u!114 &-5563339414101612004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3974173460366919338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e6c2333f90cdd4492205db5bc6eb49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5159239368413687589, guid: f811f41798679c042bd911aba391d793, type: 3}
+  bulletMoveSpeed: 10
+  burstCount: 5
+  projectilesPerBurst: 0
+  angleSpread: 0
+  startingDistance: 0.1
+  timeBetweenBursts: 0.1
+  restTime: 0.3
 --- !u!95 &1134994822330053083
 Animator:
   serializedVersion: 5
@@ -243,3 +269,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!210 &7025298623215325742
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3974173460366919338}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

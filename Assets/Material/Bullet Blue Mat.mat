@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bullet
+  m_Name: Bullet Blue Mat
   m_Shader: {fileID: -6465566751694194690, guid: afdd54f328fd9b64e9e8350ac019ba05, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -42,7 +42,7 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 3.8846562, g: 10.534698, b: 26.566038, a: 0.019607844}
+    - _Color: {r: 0, g: 15.9123955, b: 35.467743, a: 0.019607844}
   m_BuildTextureStacks: []
 --- !u!114 &3786314904453770751
 MonoBehaviour:
