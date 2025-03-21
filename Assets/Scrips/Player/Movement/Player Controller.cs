@@ -16,7 +16,9 @@ public class PlayerController : Singleton<PlayerController>
     private Rigidbody2D rb;  // Thành phần Rigidbody2D để xử lý vật lý.
     private Animator myAnimator;  // Thành phần Animator để quản lý hoạt ảnh.
     private SpriteRenderer mySpriteRender;  // Thành phần SpriteRenderer để thay đổi hướng nhân vật.
+    private KnockBack knockBack;
     private float startingMoveSpeed;
+
 
     private bool facingLeft = false;
     private bool isDashing = false;
@@ -36,6 +38,8 @@ public class PlayerController : Singleton<PlayerController>
 
         // Lấy component SpriteRenderer từ GameObject.
         mySpriteRender = GetComponent<SpriteRenderer>();
+
+        knockBack = GetComponent<KnockBack>();
     }
 
     private void Start()
@@ -81,6 +85,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Move()
     {
+        if (knockBack.GettingKnockedBack) { return; }
         // Di chuyển nhân vật bằng cách cập nhật vị trí Rigidbody2D.
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }

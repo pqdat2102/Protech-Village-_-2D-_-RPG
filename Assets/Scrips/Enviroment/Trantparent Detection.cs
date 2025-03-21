@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 
 
-public class NewBehaviourScript : MonoBehaviour
+public class TrantparentDectection : MonoBehaviour
 {
     [Range(0, 1)]
     [SerializeField] private float transparencyAmount = 0.8f;

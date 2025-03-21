@@ -9,6 +9,7 @@ public class DamageSource : MonoBehaviour
         MonoBehaviour currentActiveWeapon = ActiveWeapon.Instance.CurrentActiveWeapon;
         damageAmount = (currentActiveWeapon as IWeapon).GetWeaponInfo().weaponDamage;
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();

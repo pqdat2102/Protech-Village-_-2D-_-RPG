@@ -19,7 +19,7 @@ namespace UnityExtensions.Tween
 {
     public partial class TweenPlayer
     {
-        [SerializeField] string _id = "";
+        /*[SerializeField] string _id = "";*/
         [SerializeField] bool _foldoutControl = true;
         [SerializeField] bool _foldoutEvents = false;
 

@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
     [Header("")]
     [SerializeField] private int startHealth = 3; // Máu khởi đầu của Quái
     [SerializeField] private GameObject deathVFXPrefabs;
-    [SerializeField] private float knockBackThrust = 15f;
+    [SerializeField] private float knockBackThrust = 20f;
 
 
     private int currentHealth; // Máu hiện tại của quái 
