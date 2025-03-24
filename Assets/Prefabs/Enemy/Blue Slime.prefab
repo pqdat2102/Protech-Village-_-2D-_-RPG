@@ -36,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 3974173460366919338}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41, y: -2.56, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -128,7 +128,7 @@ CapsuleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.03297478, y: -0.002204895}
   m_Size: {x: 0.8576602, y: 0.863585}
-  m_Direction: 0
+  m_Direction: 1
 --- !u!50 &8099062436819595903
 Rigidbody2D:
   serializedVersion: 4
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 3
   deathVFXPrefabs: {fileID: 7419972325616074953, guid: e82981a9986c5dd42b0b96fd0ca5580c, type: 3}
-  knockBackThrust: 15
+  knockBackThrust: 10
 --- !u!114 &1324183722007661521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,11 +243,13 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5159239368413687589, guid: f811f41798679c042bd911aba391d793, type: 3}
   bulletMoveSpeed: 10
   burstCount: 5
-  projectilesPerBurst: 0
-  angleSpread: 0
+  projectilesPerBurst: 1
+  angleSpread: 1
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 0.3
+  stagger: 0
+  oscillate: 0
 --- !u!95 &1134994822330053083
 Animator:
   serializedVersion: 5

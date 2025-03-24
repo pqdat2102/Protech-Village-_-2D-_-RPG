@@ -76,7 +76,6 @@ public class EnemyAI : MonoBehaviour
         {
             state = State.Roaming;
         }
-
         if(attackRange != 0 && canAttack)
         {
             canAttack = false;
@@ -89,9 +88,7 @@ public class EnemyAI : MonoBehaviour
             {
                 enemyPathFiding.MoveTo(roamPosition);
             }
-
             StartCoroutine(AttackCooldownRoutine());
-
         }
     }
 
