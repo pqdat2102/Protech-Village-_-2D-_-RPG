@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1324183722007661521}
   - component: {fileID: -3570473180302020595}
   - component: {fileID: -5563339414101612004}
+  - component: {fileID: 8042234524258284408}
   - component: {fileID: 1134994822330053083}
   - component: {fileID: 7025298623215325742}
   m_Layer: 0
@@ -250,6 +251,25 @@ MonoBehaviour:
   restTime: 0.3
   stagger: 0
   oscillate: 0
+--- !u!114 &8042234524258284408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3974173460366919338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc1e9fe26a463b42b3fc246f8215e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldCoin: {fileID: 3834804921510584850, guid: 13209c10b42bce64086e2f489288b021, type: 3}
+  healthGlobe: {fileID: 3834804921510584850, guid: 90ba7f8ee3b379c40a7caf6531e62d4e, type: 3}
+  staminaGlobe: {fileID: 3834804921510584850, guid: a6ad9e01d6fc71a48802d23bb9171557, type: 3}
+  healthGlobeWeight: 15
+  staminaGlobeWeight: 15
+  goldCoinWeight: 50
+  nothingWeight: 20
 --- !u!95 &1134994822330053083
 Animator:
   serializedVersion: 5

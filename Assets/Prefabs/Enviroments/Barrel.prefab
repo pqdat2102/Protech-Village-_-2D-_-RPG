@@ -151,6 +151,10 @@ MonoBehaviour:
   goldCoin: {fileID: 3834804921510584850, guid: 13209c10b42bce64086e2f489288b021, type: 3}
   healthGlobe: {fileID: 3834804921510584850, guid: 90ba7f8ee3b379c40a7caf6531e62d4e, type: 3}
   staminaGlobe: {fileID: 3834804921510584850, guid: a6ad9e01d6fc71a48802d23bb9171557, type: 3}
+  healthGlobeWeight: 20
+  staminaGlobeWeight: 20
+  goldCoinWeight: 40
+  nothingWeight: 20
 --- !u!114 &7031891488366690754
 MonoBehaviour:
   m_ObjectHideFlags: 0

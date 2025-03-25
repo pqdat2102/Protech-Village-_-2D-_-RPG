@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpType: 2
-  pickUpDistance: 5
-  accelartionRate: 0.1
-  pickUpMoveSpeed: 6
+  pickUpDistance: 8
+  accelartionRate: 0.2
+  pickUpMoveSpeed: 10
   animationCurve:
     serializedVersion: 2
     m_Curve:

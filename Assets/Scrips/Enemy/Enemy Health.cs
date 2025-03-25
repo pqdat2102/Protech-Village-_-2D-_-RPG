@@ -5,8 +5,8 @@ public class EnemyHealth : MonoBehaviour
 {
     [Header("")]
     [SerializeField] private int startHealth = 3; // Máu khởi đầu của Quái
-    [SerializeField] private GameObject deathVFXPrefabs;
-    [SerializeField] private float knockBackThrust = 20f;
+    [SerializeField] private GameObject deathVFXPrefabs; // prefab vfx của quái lúc chết
+    [SerializeField] private float knockBackThrust = 20f; // khoảng các bị đẩy lùi
 
 
     private int currentHealth; // Máu hiện tại của quái 
@@ -25,24 +25,25 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int damage) // Hàm tính dame quái nhận vào và đẩy lùi quái đi 15f
     {
-        currentHealth -= damage;
-        knockBack.GetKnockBack(PlayerController.Instance.transform, knockBackThrust);
-        StartCoroutine(flash.FlashRoutine());
-        StartCoroutine(CheckDetectDeathRoutine());
+        currentHealth -= damage; // trừ máu
+        knockBack.GetKnockBack(PlayerController.Instance.transform, knockBackThrust); // bị đẩy lùi
+        StartCoroutine(flash.FlashRoutine()); // bị trắng
+        StartCoroutine(CheckDetectDeathRoutine()); // kiểm tra xem quái chết chưa
     }
 
     private IEnumerator CheckDetectDeathRoutine()
     {
-        yield return new WaitForSeconds(flash.GetRestoreMatTime());
+        yield return new WaitForSeconds(flash.GetRestoreMatTime()); // Chết cũng phải bị giật về sau rồi mới cho chết
         DetectDeath();
     }
 
-    public void DetectDeath() // Khi hp quái <= 0 thì hủy quái
+    public void DetectDeath() // Khi hp quái <= 0, quái chết
     {
         if (currentHealth <= 0)
         {
-            Instantiate(deathVFXPrefabs, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            Instantiate(deathVFXPrefabs, transform.position, Quaternion.identity); // Bật VFX chết
+            GetComponent<PickUpSpawner>().DropItems(); // getcomponet dropitem để rơi item khi quái chết
+            Destroy(gameObject); // hủy game object
         }
     }
 }

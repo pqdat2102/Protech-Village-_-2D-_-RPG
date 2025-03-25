@@ -444,7 +444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   knockBackThrustAmount: 10
-  damageRecoveryTime: 1
+  damageRecoveryTime: 0.2
 --- !u!114 &5488188710092571077
 MonoBehaviour:
   m_ObjectHideFlags: 0
