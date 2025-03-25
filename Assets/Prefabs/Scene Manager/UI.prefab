@@ -2123,6 +2123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8055724837042238918}
+  - component: {fileID: 8838060501065564705}
   m_Layer: 5
   m_Name: Gold Coin Container
   m_TagString: Untagged
@@ -2151,6 +2152,19 @@ RectTransform:
   m_AnchoredPosition: {x: 216.2, y: -99.4}
   m_SizeDelta: {x: 229.1394, y: 97.2745}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &8838060501065564705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8858946828831141421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5177129fb73ada947993f8d196d4be33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldText: {fileID: 3707137775836981440}
 --- !u!1 &8902853156694468509
 GameObject:
   m_ObjectHideFlags: 0
