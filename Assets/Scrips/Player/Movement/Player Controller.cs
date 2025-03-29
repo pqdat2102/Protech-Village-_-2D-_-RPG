@@ -47,11 +47,20 @@ public class PlayerController : Singleton<PlayerController>
         playerControls.Combat.Dash.performed += _ => Dash();
 
         startingMoveSpeed = moveSpeed;
+
+        ActiveInventory.Instance.EquipStartWeapons();
+
+        UIFade.Instance.FadeToClear();
     }
     private void OnEnable()
     {
         // Kích hoạt hệ thống điều khiển của người chơi.
         playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
     }
 
     private void Update()
@@ -85,7 +94,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Move()
     {
-        if (knockBack.GettingKnockedBack) { return; }
+        if (knockBack.GettingKnockedBack || PlayerHealth.Instance.isDead) { return; }
         // Di chuyển nhân vật bằng cách cập nhật vị trí Rigidbody2D.
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
